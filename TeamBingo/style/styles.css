@@ -299,7 +299,10 @@ ul li {
   -o-user-select: none;
   user-select: none;
 }
-table {
+table.info {
+	border-spacing: 10px;
+}
+table.bingo {
   width: 100%;
   border-spacing: 0px;
   border-collapse: collapse;
@@ -732,8 +735,82 @@ th {
 #bingoPage #bingo tr td.redsquare.hover {
   background: #770022;
 }
+#bingoPage #bingo tr td.bluesquare {
+  background: #042aff;
+}
+#bingoPage #bingo tr td.bluesquare:hover,
+#bingoPage #bingo tr td.bluesquare.hover {
+  background: #0486ff;
+}
+#bingoPage #bingo tr td.purplesquare {
+  background: #9901ff;
+}
+#bingoPage #bingo tr td.purplesquare:hover,
+#bingoPage #bingo tr td.purplesquare.hover {
+  background: #e600ff;
+}
+#bingoPage #bingo tr td.orangesquare {
+  background: #ff8800;
+}
+#bingoPage #bingo tr td.orangesquare:hover,
+#bingoPage #bingo tr td.orangesquare.hover {
+  background: #ff9900;
+}
+#bingoPage #bingo tr td.yellowsquare {
+  background: #ffe100;
+}
+#bingoPage #bingo tr td.yellowsquare:hover,
+#bingoPage #bingo tr td.yellowsquare.hover {
+  background: #f2ff00;
+}
 #bingoPage #about_bingo {
   float: right;
   width: 350px;
   margin-right: 16px;
+}
+.greensquareList{
+	color: #005511;
+	font-weight: 700;
+	padding: 10px;
+}
+.redsquareList{
+	color: #550011;
+	font-weight: 700;
+	padding: 10px;
+}
+.bluesquareList{
+	color: #042aff;
+	font-weight: 700;
+	padding: 10px;
+}
+.purplesquareList{
+	color: #9901ff;
+	font-weight: 700;
+	padding: 10px;
+}
+.orangesquareList{
+	color: #ff8800;
+	font-weight: 700;
+	padding: 10px;
+}
+.yellowsquareList{
+	color: #ffe100;
+	font-weight: 700;
+	padding: 10px;
+}
+#guide {
+	text-align: center;
+	text-size: 150%;
+	text-decoration: underline;
+}
+#users {
+	background: #000000;
+	font-size: 150%;
+	text-align: center;
+	border: 1px #0a245a solid;
+}
+#warning {
+	text-align: center;
+	color: #ff0000;
+	text-size: 150%;
 }

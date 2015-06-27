@@ -1,16 +1,17 @@
-function bingosetup() {
+function bingosetup(seedValue, color) {
   
+	for(var i = 1; i < 26; i++){
+		$("#slot" + i).addClass("blacksquare");
+	}
+	
     $("#bingo tr td:not(.popout), #selected td").click(
 		function(){
-			if($(this).hasClass("greensquare")){
-				$(this).addClass("redsquare").removeClass("greensquare");
-				sendChange($(this).attr("id"), "red");
-			}else if($(this).hasClass("redsquare")){
-				$(this).removeClass("redsquare");
-				sendChange($(this).attr("id"), "black");
-			}else{
-				$(this).addClass("greensquare");
-				sendChange($(this).attr("id"), "green");
+			if($(this).hasClass(color)){
+				$(this).removeClass(color).addClass("blacksquare");
+				sendChange($(this).attr("id"), color);
+			}else if($(this).hasClass("blacksquare")){
+				$(this).removeClass("blacksquare").addClass(color);
+				sendChange($(this).attr("id"), color);
 			}
 		}
     
@@ -32,7 +33,7 @@ function bingosetup() {
 	$("#bltr").hover(function() { $(".bltr").addClass("hover"); }, function() {	$(".bltr").removeClass("hover"); });
 
 	var bingoOpts = {
-		seed: getUrlParameter('seed'),
+		seed: seedValue,
 		mode: getUrlParameter('mode') || 'normal',
 		lang: getUrlParameter('lang') || 'name'
 	};
@@ -45,11 +46,11 @@ function bingosetup() {
 
 	var cardType = prettyMode[bingoOpts.mode];
 	var results = $("#results");
-	results.append ("<p>OoT Bingo <strong>" + bingoList["info"].version + "</strong>&emsp;Seed: <strong>" + 
+	results.append ("<p>Bingo <strong>" + bingoList["info"].version + "</strong>&emsp;Seed: <strong>" + 
 		bingoOpts.seed + "</strong>&emsp;Card type: <strong>" + cardType + "</strong></p>");
 
 	
-	var bingoFunc = ootBingoGenerator;
+	var bingoFunc = srl.bingo;
 	
 	var bingoBoard = bingoFunc(bingoList, bingoOpts);
 	if(bingoBoard) {
@@ -60,5 +61,3 @@ function bingosetup() {
 		alert('Card could not be generated');
 	}
 }
-
-$(bingosetup);

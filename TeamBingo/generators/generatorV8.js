@@ -1,6 +1,6 @@
 //NOTICE: As of version 6, this script will only generate cards correctly for Ocarina of Time bingo
 //and as shuch should be saved alongside the regular bingo script.
-ootBingoGenerator = function(bingoList, opts) {
+srl.bingo = function(bingoList, opts) {
 	if(!opts) opts = {};
 	var LANG = opts.lang || 'name';
 	var SEED = opts.seed || Math.ceil(999999 * Math.random()).toString();
