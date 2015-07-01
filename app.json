@@ -1,0 +1,7 @@
+{
+  "name": "Team Bingo",
+  "description": "Application to share a single bingo board",
+  "repository": "https://github.com/moose1137/TeamBingo",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["node", "express", "static"]
+}
